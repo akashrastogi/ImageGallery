@@ -23,8 +23,6 @@ extension ImageListAPIStore: ImageListStoreProtocol {
     
     ///Fetche ImageList
     func fetchFlickrData(tag: String?, completion: @escaping (FlickrData?, Error?) -> ()) {
-        
-        
         guard let url = APIUrls.getFlickrFeeds(tag).url() else {
             
             completion(nil, APIError.invalidURL)
@@ -40,7 +38,7 @@ extension ImageListAPIStore: ImageListStoreProtocol {
             var flickrError: Error?
             
             if let data = data {
-
+                
                 let decoder = JSONDecoder()
                 do {
                     flickrData = try decoder.decode(FlickrData.self, from: data)

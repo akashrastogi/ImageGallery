@@ -65,7 +65,7 @@ class NetworkClient: NetworkClientProtocol {
             completion(nil, nil, NetworkError.invalidURL)
             return
         }
-
+        
         session.dataTask(with: request) { data, response, error in
 
             DispatchQueue.main.async {

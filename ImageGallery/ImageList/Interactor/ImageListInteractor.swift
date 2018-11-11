@@ -43,7 +43,7 @@ extension ImageListInteractor: ImageListInteractorInput {
         
         isLoading = true
         
-        worker.fetchFlickrData { [weak self] (flickrData, error) in
+        worker.fetchFlickrData(tag: tag) { [weak self] (flickrData, error) in
             if let wSelf = self {
                 if let flickrError = error {
                     wSelf.output.presentError(error: flickrError)

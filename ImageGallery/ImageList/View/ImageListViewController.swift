@@ -26,6 +26,9 @@ class ImageListViewController: BaseViewController
     //Public members
     var output: ImageListViewControllerOutput!
     
+    //Private members
+    private var arrImageListViewModel: [ImageListViewModel] = []
+
     //IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -53,13 +56,40 @@ class ImageListViewController: BaseViewController
     
 }
 
-extension ImageListViewController: ImageListViewControllerInput {
+extension ImageListViewController: ImageListViewControllerInput, ErrorPresenter {
     func displayFlickrImages(viewModels: [ImageListViewModel]) {
-        print(viewModels)
+        arrImageListViewModel = viewModels
+        collectionView.reloadData()
     }
     
     func displayError(viewModel: ErrorViewModel) {
-        print(viewModel)
+        presentError(viewModel: viewModel)
     }
 }
 
+extension ImageListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
+        return arrImageListViewModel.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FlickrImageCell", for: indexPath) as? FlickrImageCell
+        cell?.updateData(viewModel: arrImageListViewModel[indexPath.item])
+        return cell ?? UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        let size = CGSize.init(width: 100, height: 190)
+        return size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        
+    }
+    
+}
