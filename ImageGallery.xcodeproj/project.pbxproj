@@ -19,6 +19,15 @@
 		3833B99221981BBF007E0458 /* ImageListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3833B99021981BBF007E0458 /* ImageListViewController.storyboard */; };
 		3833B99921981F86007E0458 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833B99821981F86007E0458 /* Strings.swift */; };
 		3833B99D21982132007E0458 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833B99C21982132007E0458 /* BaseViewController.swift */; };
+		3833B9A021987043007E0458 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833B99F21987043007E0458 /* NetworkClient.swift */; };
+		3833B9A3219870A7007E0458 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833B9A2219870A7007E0458 /* API.swift */; };
+		3833B9A8219872A2007E0458 /* ImageListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833B9A5219872A2007E0458 /* ImageListWorker.swift */; };
+		3833B9A9219872A2007E0458 /* ImageListAPIStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833B9A6219872A2007E0458 /* ImageListAPIStore.swift */; };
+		3833B9AA219872A2007E0458 /* ImageListStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833B9A7219872A2007E0458 /* ImageListStoreProtocol.swift */; };
+		3833B9AC219872FA007E0458 /* FlickrData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833B9AB219872FA007E0458 /* FlickrData.swift */; };
+		3833B9AE219873EC007E0458 /* URLRequest+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833B9AD219873EC007E0458 /* URLRequest+JSON.swift */; };
+		3833B9B121987C87007E0458 /* ImageListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833B9B021987C87007E0458 /* ImageListViewModel.swift */; };
+		3833B9B321987CAC007E0458 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833B9B221987CAB007E0458 /* ErrorViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +57,15 @@
 		3833B99121981BBF007E0458 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ImageGallery/Base.lproj/ImageListViewController.storyboard; sourceTree = SOURCE_ROOT; };
 		3833B99821981F86007E0458 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		3833B99C21982132007E0458 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		3833B99F21987043007E0458 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		3833B9A2219870A7007E0458 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		3833B9A5219872A2007E0458 /* ImageListWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListWorker.swift; sourceTree = "<group>"; };
+		3833B9A6219872A2007E0458 /* ImageListAPIStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListAPIStore.swift; sourceTree = "<group>"; };
+		3833B9A7219872A2007E0458 /* ImageListStoreProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListStoreProtocol.swift; sourceTree = "<group>"; };
+		3833B9AB219872FA007E0458 /* FlickrData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrData.swift; sourceTree = "<group>"; };
+		3833B9AD219873EC007E0458 /* URLRequest+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+JSON.swift"; sourceTree = "<group>"; };
+		3833B9B021987C87007E0458 /* ImageListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListViewModel.swift; sourceTree = "<group>"; };
+		3833B9B221987CAB007E0458 /* ErrorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,10 +128,12 @@
 		3833B95221981B73007E0458 /* ImageList */ = {
 			isa = PBXGroup;
 			children = (
+				3833B9A42198727B007E0458 /* Model */,
 				3833B95521981B73007E0458 /* Presenter */,
 				3833B95B21981B73007E0458 /* View */,
 				3833B95E21981B73007E0458 /* Configurator */,
 				3833B96021981B73007E0458 /* Interactor */,
+				3833B9AF21987C87007E0458 /* ViewModel */,
 			);
 			path = ImageList;
 			sourceTree = "<group>";
@@ -155,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				3833B97721981B73007E0458 /* AppDelegate.swift */,
+				3833B9A1219870A7007E0458 /* Configuration */,
+				3833B99E21987043007E0458 /* Network */,
 				3833B99721981F72007E0458 /* Model */,
 				3833B97321981B73007E0458 /* View */,
 			);
@@ -173,9 +195,46 @@
 		3833B99721981F72007E0458 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3833B9B221987CAB007E0458 /* ErrorViewModel.swift */,
+				3833B9AD219873EC007E0458 /* URLRequest+JSON.swift */,
+				3833B9AB219872FA007E0458 /* FlickrData.swift */,
 				3833B99821981F86007E0458 /* Strings.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3833B99E21987043007E0458 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3833B99F21987043007E0458 /* NetworkClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3833B9A1219870A7007E0458 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3833B9A2219870A7007E0458 /* API.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		3833B9A42198727B007E0458 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3833B9A6219872A2007E0458 /* ImageListAPIStore.swift */,
+				3833B9A7219872A2007E0458 /* ImageListStoreProtocol.swift */,
+				3833B9A5219872A2007E0458 /* ImageListWorker.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3833B9AF21987C87007E0458 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3833B9B021987C87007E0458 /* ImageListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,13 +337,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3833B9A9219872A2007E0458 /* ImageListAPIStore.swift in Sources */,
 				3833B98F21981B73007E0458 /* AppDelegate.swift in Sources */,
 				3833B98D21981B73007E0458 /* Storyboardable.swift in Sources */,
 				3833B99921981F86007E0458 /* Strings.swift in Sources */,
+				3833B9AC219872FA007E0458 /* FlickrData.swift in Sources */,
 				3833B97F21981B73007E0458 /* ImageListConfigurator.swift in Sources */,
+				3833B9AE219873EC007E0458 /* URLRequest+JSON.swift in Sources */,
+				3833B9AA219872A2007E0458 /* ImageListStoreProtocol.swift in Sources */,
+				3833B9A3219870A7007E0458 /* API.swift in Sources */,
+				3833B9B321987CAC007E0458 /* ErrorViewModel.swift in Sources */,
+				3833B9A8219872A2007E0458 /* ImageListWorker.swift in Sources */,
 				3833B98021981B73007E0458 /* ImageListInteractor.swift in Sources */,
+				3833B9A021987043007E0458 /* NetworkClient.swift in Sources */,
 				3833B99D21982132007E0458 /* BaseViewController.swift in Sources */,
 				3833B97E21981B73007E0458 /* ImageListViewController.swift in Sources */,
+				3833B9B121987C87007E0458 /* ImageListViewModel.swift in Sources */,
 				3833B97921981B73007E0458 /* ImageListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

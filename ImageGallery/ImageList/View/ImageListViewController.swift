@@ -15,7 +15,9 @@ protocol ImageListViewControllerInput: ImageListPresenterOutput {
 
 /// ImageListViewControllerOutput is a protocol for view controller output behaviours
 protocol ImageListViewControllerOutput {
-
+    var isBusy: Bool { get }
+    var flickrData: FlickrData? { get }
+    func fetchImageList(tag:String?)
 }
 
 /// ImageListViewController is a view controller responsible for displaying ImageList
@@ -38,16 +40,26 @@ class ImageListViewController: BaseViewController
     {
         super.viewDidLoad()
         uiSetup()
+        fetchImageList(tag: nil)
     }
     
     private func uiSetup() {
         navigationItem.title = Strings.NavigationTitle.publicFeed
     }
     
+    private func fetchImageList(tag:String?) {
+        output.fetchImageList(tag: tag)
+    }
+    
 }
 
 extension ImageListViewController: ImageListViewControllerInput {
+    func displayFlickrImages(viewModels: [ImageListViewModel]) {
+        print(viewModels)
+    }
     
-
+    func displayError(viewModel: ErrorViewModel) {
+        print(viewModel)
+    }
 }
 

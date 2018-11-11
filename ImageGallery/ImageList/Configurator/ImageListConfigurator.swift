@@ -17,7 +17,8 @@ class ImageListConfigurator {
         
         let presenter = ImageListPresenter(output: viewController)
         
-        let interactor = ImageListInteractor(output: presenter)
+        let worker = ImageListWorker()
+        let interactor = ImageListInteractor(output: presenter, worker: worker)
         
         viewController.output = interactor
     }

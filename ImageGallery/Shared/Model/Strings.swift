@@ -13,4 +13,11 @@ struct Strings {
     struct NavigationTitle {
         static let publicFeed = NSLocalizedString("Image Gallery", comment: "Flickr public photos")
     }
+    
+    struct Error {
+        
+        static let genericTitle = NSLocalizedString("Sorry", comment: "Generic error title")
+        static let genericMessage = NSLocalizedString("Something went wrong.", comment: "Generic error message")
+        static let okButtonTitle = NSLocalizedString("Ok", comment: "Alert button title")
+    }
 }
