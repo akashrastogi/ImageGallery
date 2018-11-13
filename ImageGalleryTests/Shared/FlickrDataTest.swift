@@ -18,16 +18,10 @@ class FlickrDataTest: XCTestCase {
         super.tearDown()
     }
     
-    func testFromJSONReturnsManufacturer() {
+    func testFromJSONReturnsFlickrData() {
         
-        // Given
-        let bundle = Bundle(for: FlickrDataTest.self)
-        let path = bundle.path(forResource: "FlickrData", ofType: "json")!
-        let url = URL(fileURLWithPath: path)
         do {
-            let data = try Data.init(contentsOf: url, options: Data.ReadingOptions.mappedIfSafe)
-            let decoder = JSONDecoder()
-            let flickrData = try decoder.decode(FlickrData.self, from: data)
+            let flickrData = try mockFlickrData()
             
             XCTAssertEqual(flickrData.title, "Uploads from everyone")
             XCTAssertEqual(flickrData.arrImages.count, 20)
