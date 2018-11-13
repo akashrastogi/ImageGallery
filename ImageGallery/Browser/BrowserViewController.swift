@@ -47,12 +47,6 @@ class BrowserViewController: BaseViewController {
         super.viewWillDisappear(animated)
     }
     
-    @objc private func refreshWebView()
-    {
-        // On Scroll to Refresh, Reload Current Page
-        webView.reload()
-    }
-    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
     {
         if keyPath == "estimatedProgress"
