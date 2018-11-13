@@ -19,8 +19,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jT5-Bq-jrG">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pNY-AB-mo7" id="upm-pB-Qfd"/>
+                                </connections>
+                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iu8-bb-KNf">
-                                <rect key="frame" x="10" y="30" width="355" height="627"/>
+                                <rect key="frame" x="10" y="86" width="355" height="571"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vKN-Hc-Pun">
                                     <size key="itemSize" width="100" height="190"/>
@@ -85,15 +92,19 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="TdZ-dY-wv2" firstAttribute="trailing" secondItem="iu8-bb-KNf" secondAttribute="trailing" constant="10" id="1im-2o-NMo"/>
-                            <constraint firstItem="iu8-bb-KNf" firstAttribute="top" secondItem="TdZ-dY-wv2" secondAttribute="top" constant="10" id="33K-lR-guP"/>
+                            <constraint firstItem="jT5-Bq-jrG" firstAttribute="top" secondItem="TdZ-dY-wv2" secondAttribute="top" id="4XJ-EZ-Aym"/>
                             <constraint firstItem="iu8-bb-KNf" firstAttribute="leading" secondItem="TdZ-dY-wv2" secondAttribute="leading" constant="10" id="Ph1-3J-4SI"/>
+                            <constraint firstItem="jT5-Bq-jrG" firstAttribute="trailing" secondItem="TdZ-dY-wv2" secondAttribute="trailing" id="Rd8-ML-2yL"/>
                             <constraint firstItem="TdZ-dY-wv2" firstAttribute="bottom" secondItem="iu8-bb-KNf" secondAttribute="bottom" constant="10" id="eh7-8l-4RZ"/>
+                            <constraint firstItem="jT5-Bq-jrG" firstAttribute="leading" secondItem="TdZ-dY-wv2" secondAttribute="leading" id="qbD-sd-LP3"/>
+                            <constraint firstItem="iu8-bb-KNf" firstAttribute="top" secondItem="jT5-Bq-jrG" secondAttribute="bottom" constant="10" id="yJk-68-pPz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TdZ-dY-wv2"/>
                     </view>
                     <navigationItem key="navigationItem" id="EMZ-0r-Mvw"/>
                     <connections>
                         <outlet property="collectionView" destination="iu8-bb-KNf" id="atI-sb-tGR"/>
+                        <outlet property="searchBar" destination="jT5-Bq-jrG" id="Nhk-Of-zAh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uqu-t8-RGz" sceneMemberID="firstResponder"/>

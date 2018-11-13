@@ -10,8 +10,25 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    var activityIndicatorView: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func showLoader(_ view: UIView?=nil) {
+        activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
+        activityIndicatorView.color = UIColor.black
+        activityIndicatorView.center = (view ?? self.view).center
+        activityIndicatorView.hidesWhenStopped = false
+        activityIndicatorView.startAnimating()
+        (view ?? self.view).addSubview(activityIndicatorView)
+    }
+    
+    func hideLoader() {
+        activityIndicatorView.stopAnimating()
+        activityIndicatorView.removeFromSuperview()
+        activityIndicatorView = nil
     }
     
 }

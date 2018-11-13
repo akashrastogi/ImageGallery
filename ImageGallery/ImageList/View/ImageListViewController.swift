@@ -28,9 +28,10 @@ class ImageListViewController: BaseViewController
     
     //Private members
     private var arrImageListViewModel: [ImageListViewModel] = []
-
+    
     //IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     
     override func awakeFromNib()
@@ -48,9 +49,11 @@ class ImageListViewController: BaseViewController
     
     private func uiSetup() {
         navigationItem.title = Strings.NavigationTitle.publicFeed
+        searchBar.showsCancelButton = true
     }
     
     private func fetchImageList(tag:String?) {
+        showLoader()
         output.fetchImageList(tag: tag)
     }
     
@@ -60,10 +63,12 @@ extension ImageListViewController: ImageListViewControllerInput, ErrorPresenter 
     func displayFlickrImages(viewModels: [ImageListViewModel]) {
         arrImageListViewModel = viewModels
         collectionView.reloadData()
+        hideLoader()
     }
     
     func displayError(viewModel: ErrorViewModel) {
         presentError(viewModel: viewModel)
+        hideLoader()
     }
 }
 
@@ -93,3 +98,20 @@ extension ImageListViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
 }
+
+extension ImageListViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        fetchImageList(tag: searchBar.text)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        if searchBar.isFirstResponder {
+            searchBar.text = nil
+            searchBar.resignFirstResponder()
+        }
+    }
+    
+}
+
