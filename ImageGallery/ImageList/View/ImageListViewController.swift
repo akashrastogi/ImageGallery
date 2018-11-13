@@ -25,6 +25,7 @@ class ImageListViewController: BaseViewController
 {
     //Public members
     var output: ImageListViewControllerOutput!
+    var router: ImageListRouterProtocol!
     
     //Private members
     private var arrImageListViewModel: [ImageListViewModel] = []
@@ -94,7 +95,7 @@ extension ImageListViewController: UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
-        
+        router.navigateToBrowser(indexPath: indexPath, animated: true)
     }
     
 }

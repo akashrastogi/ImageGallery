@@ -32,6 +32,9 @@
 		3833B9B821988486007E0458 /* ImageCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833B9B621988486007E0458 /* ImageCacher.swift */; };
 		3833B9B921988486007E0458 /* ThreadSafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833B9B721988486007E0458 /* ThreadSafeArray.swift */; };
 		3833B9BB21988546007E0458 /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833B9BA21988546007E0458 /* ErrorPresenter.swift */; };
+		3862E259219AFFDE00225163 /* ImageListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3862E258219AFFDD00225163 /* ImageListRouter.swift */; };
+		3862E25C219B025F00225163 /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3862E25B219B025F00225163 /* BrowserViewController.swift */; };
+		3862E25E219B027C00225163 /* BrowserViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3862E25D219B027C00225163 /* BrowserViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,9 @@
 		3833B9B621988486007E0458 /* ImageCacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCacher.swift; sourceTree = "<group>"; };
 		3833B9B721988486007E0458 /* ThreadSafeArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadSafeArray.swift; sourceTree = "<group>"; };
 		3833B9BA21988546007E0458 /* ErrorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
+		3862E258219AFFDD00225163 /* ImageListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListRouter.swift; sourceTree = "<group>"; };
+		3862E25B219B025F00225163 /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
+		3862E25D219B027C00225163 /* BrowserViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BrowserViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,7 @@
 			children = (
 				3833B96421981B73007E0458 /* Shared */,
 				3833B95221981B73007E0458 /* ImageList */,
+				3862E25A219B023D00225163 /* Browser */,
 				3833B939219819DA007E0458 /* Assets.xcassets */,
 				3833B93B219819DA007E0458 /* LaunchScreen.storyboard */,
 				3833B93E219819DA007E0458 /* Info.plist */,
@@ -138,6 +145,7 @@
 			children = (
 				3833B9A42198727B007E0458 /* Model */,
 				3833B95521981B73007E0458 /* Presenter */,
+				3862E257219AFFDD00225163 /* Router */,
 				3833B95B21981B73007E0458 /* View */,
 				3833B95E21981B73007E0458 /* Configurator */,
 				3833B96021981B73007E0458 /* Interactor */,
@@ -249,6 +257,23 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		3862E257219AFFDD00225163 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3862E258219AFFDD00225163 /* ImageListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		3862E25A219B023D00225163 /* Browser */ = {
+			isa = PBXGroup;
+			children = (
+				3862E25B219B025F00225163 /* BrowserViewController.swift */,
+				3862E25D219B027C00225163 /* BrowserViewController.storyboard */,
+			);
+			path = Browser;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -329,6 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3862E25E219B027C00225163 /* BrowserViewController.storyboard in Resources */,
 				3833B93D219819DA007E0458 /* LaunchScreen.storyboard in Resources */,
 				3833B93A219819DA007E0458 /* Assets.xcassets in Resources */,
 				3833B99221981BBF007E0458 /* ImageListViewController.storyboard in Resources */,
@@ -361,6 +387,7 @@
 				3833B9AA219872A2007E0458 /* ImageListStoreProtocol.swift in Sources */,
 				3833B9A3219870A7007E0458 /* API.swift in Sources */,
 				3833B9B321987CAC007E0458 /* ErrorViewModel.swift in Sources */,
+				3862E259219AFFDE00225163 /* ImageListRouter.swift in Sources */,
 				3833B9A8219872A2007E0458 /* ImageListWorker.swift in Sources */,
 				3833B98021981B73007E0458 /* ImageListInteractor.swift in Sources */,
 				3833B9BB21988546007E0458 /* ErrorPresenter.swift in Sources */,
@@ -369,6 +396,7 @@
 				3833B97E21981B73007E0458 /* ImageListViewController.swift in Sources */,
 				3833B9B121987C87007E0458 /* ImageListViewModel.swift in Sources */,
 				3833B9B921988486007E0458 /* ThreadSafeArray.swift in Sources */,
+				3862E25C219B025F00225163 /* BrowserViewController.swift in Sources */,
 				3833B97921981B73007E0458 /* ImageListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

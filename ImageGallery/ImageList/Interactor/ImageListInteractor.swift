@@ -48,7 +48,17 @@ extension ImageListInteractor: ImageListInteractorInput {
                 if let flickrError = error {
                     wSelf.output.presentError(error: flickrError)
                 }
-                else if let _flickrData = flickrData {
+                else if var _flickrData = flickrData {
+                    
+                    _flickrData.arrImages.sort(by: { (flickrImg1, flickrImg2) -> Bool in
+                        if let date1 = flickrImg1.createdAt,
+                            let date2 = flickrImg2.createdAt {
+                            return date1 < date2
+                        }
+                        else {
+                            return true
+                        }
+                    })
                     
                     wSelf.flickrData = _flickrData
                     

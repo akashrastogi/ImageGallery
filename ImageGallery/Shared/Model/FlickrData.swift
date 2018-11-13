@@ -12,7 +12,7 @@ struct FlickrData: Decodable {
     
     let title: String?
     let link: URL?
-    let arrImages: [FlickrImage]
+    var arrImages: [FlickrImage]
     
     private enum CodingKeys: String, CodingKey {
         case title

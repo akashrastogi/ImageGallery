@@ -15,11 +15,13 @@ class ImageListConfigurator {
     
     func configure(viewController: ImageListViewController) {
         
+        let router = ImageListRouter(viewController: viewController)
         let presenter = ImageListPresenter(output: viewController)
         
         let worker = ImageListWorker()
         let interactor = ImageListInteractor(output: presenter, worker: worker)
         
         viewController.output = interactor
+        viewController.router = router
     }
 }

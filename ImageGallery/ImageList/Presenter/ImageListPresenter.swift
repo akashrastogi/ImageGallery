@@ -35,14 +35,7 @@ extension ImageListPresenter: ImageListPresenterInput {
         let df = DateFormatter()
         df.dateFormat = "dd MMM yy"
         
-        let viewModels = arrFlickrImages.sorted { (fImg1, fImg2) -> Bool in
-            if let date1 = fImg1.createdAt,
-                let date2 = fImg2.createdAt {
-                return date1 < date2
-            }
-            return true
-            
-            }.compactMap { (flickrImage) -> ImageListViewModel? in
+        let viewModels = arrFlickrImages.compactMap { (flickrImage) -> ImageListViewModel? in
                 
                 if let title = flickrImage.title,
                     let url = flickrImage.imageLink,
